@@ -1,12 +1,16 @@
 language: scala
 sudo: false
 scala:
-  - 2.12.6
-  - 2.11.12
+- 2.12.6
+- 2.11.12
 jdk:
-  - oraclejdk8
+- oraclejdk8
 before_install:
-  - export PATH=${PATH}:./vendor/bundle
+- export PATH=${PATH}:./vendor/bundle
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
-  - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sbt publish; fi
+- sbt ++$TRAVIS_SCALA_VERSION scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sbt publish; fi
+env:
+  global:
+  - secure: L7nS1RQ523C3a39wuyMgyTIN9h1DKh9KMSdLLxpoHGLiWvMYlBuXX3BB2HD2mPuzUqFDZU/Jy1iiI4r5tGoBzWzJ2tUxWAjxFhYk0TqSu76Ec2fEETlV8bcSR/sp9itq6339C6A3ysNtqftyzw6L8kVM/Y3oMuvsncX9B+OSs0R0tTgA2V64bgnfaBH2C4WS1RNxcNcEL/IzNjhvJzzfroGCCUyzy7XRowRZUInGXGnUHvYNMtD9FrpqickzQziAsP6xT8S0uD4PcmbqWla5pxfP1boLZ7aJfTJLtvGEVA8r7kn3ZE3Ln6yYcyQO/MYbJB5y8blXuJ3TKC5sL/gg/DISeAUUosQm77F2cs9MDfAiHp1y/5vrkPoaTYjnaJI9LlA77kpf04nRf4YpnyEuM4WaaREmZKvlGL3/9g2icl0p9JTrUZcAXlp96+1JqphED96gGF5z8nrN6RW8wGKFaqicI+u+dXBNSQVRtPoKEuCurp5DLjCgjmDtGzF1nLCjueHdRUs37YSZ40qY+dxLpYbOSnytjRtNkvswXmx/EqN8Voy2Qfw1STxrS6VbfIyTjae9s3K/j6z2QVht4srlkyv7Cj+PRlNHcEXFpnzCgobDrnJPDFKLx5qxh7yuH7ELzVNx28Ysqn/30uekMF+g6jpyel4S77p8wVFiMXeuD9k=
+  - secure: FxHUdglzOsX7Ma1bWVYSfAEQbj8lwkiU2IzCEV72HjthH5rOQFLMoiGUjZUNaUaxU82UpLzOkD5vFe/HgXxanfvqVChXQXe28RdLhZyWLzTG/t13d1KrQIftYU1u6OBkHyXFJC6ZBZZDbVTC3OLEJY5bJgPEC4tqAf2Mh651rlNwZ1sMnpn4Pk2kYFR1VMl603aecy4NQSa+O0wymVX+O/hUFZMIC6rLM6yC2OBFW7hnbCjrRVRmzScV+tk6njd8xxl/EWuLJ+fI2aAAtaotBPPDG+uV+r5FHznu1IUKFQnuYpMbGd2TfWFuG+qLUUrMInd8mp9ggvISsuf9K7MFE7Eue63LXwN87F3IavZTKzYprOJt75jQbCsiREQJfzSVnixllsc8Np3/5GBCertMMs2h5wdMrRE8vtwz9L2ZSLFPG76kTRRVgONTKC6Fp2xXYAZN0Tqpxh/QwcJZTMM4rMAvqrtHeSU5d5XuwkEGa+Uk/LXefGe6ybBFMFFuV3FU6Blc6eTta0fAY378Ama3pBruvWi6xkLoB1/G3qp9LWgEIpexRSpcHwdfSIVa7mYsv75JI12vERAZET2T39x6dqdMjGHDxZbNZipH0Ztighml3bNIUSzW2xse6p3fUOAUVhEzdUjBLPxbv57gftq37Com7bQQyfiYt+VkpMlArwY=
